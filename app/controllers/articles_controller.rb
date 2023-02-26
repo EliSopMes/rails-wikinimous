@@ -12,7 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(task_params)
+    @article = Article.new(article_params)
     @article.save
     redirect_to articles_path(@article)
   end
@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.update(task_params)
+    @article.update(article_params)
     redirect_to articles_path(@article)
   end
 
@@ -35,8 +35,7 @@ class ArticlesController < ApplicationController
 
   private
 
-  def task_params
+  def article_params
     params.require(:article).permit(:title, :content)
   end
 end
-  

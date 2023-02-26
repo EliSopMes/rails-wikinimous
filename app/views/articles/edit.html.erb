@@ -1,15 +1,16 @@
-<h2>Edit article</h2>
+<h2>Editing article</h2>
 
 <%= form_with model: @article do |f| %>
-  <%= f.label :title %>
+  <%= f.label :title, style:"font-weight:bold; padding-bottom:5px;" %>
   <br>
   <%= f.text_field :title, class: "title" %>
   <br>
   <br>
-  <%= f.label :content %>
+  <%= f.label :content, style:"font-weight:bold; padding-bottom:5px;" %>
   <br>
-  <%= f.text_field :content, class: "content" %>
-  <br>
+  <%= f.text_area :content, class: "content", style:"height:200px;" %>
   <br>
   <%= f.submit %>
 <% end %>
+
+<p> <%= link_to "show", article_path(@article) %> | <%= link_to "back", root_path %> </p>

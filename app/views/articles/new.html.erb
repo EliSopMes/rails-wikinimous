@@ -1,11 +1,16 @@
 <h2>New article</h2>
 
 <%= form_with model: @article do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= f.label :title, style:"font-weight:bold; padding-bottom:5px;" %>
+  <br>
+  <%= f.text_field :title, class: "title" %>
+  <br>
+  <br>
+  <%= f.label :content, style:"font-weight:bold; padding-bottom:5px;" %>
+  <br>
+  <%= f.text_area :content, class: "content", style:"height:200px;" %>
+  <br>
   <%= f.submit %>
+  <br>
 <% end %>
-
-<p> <%= link_to "Back to list", articles_path %> </p>
+<p><%= link_to "Back", root_path %> </p>
